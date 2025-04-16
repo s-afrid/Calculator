@@ -3,6 +3,12 @@ from tkinter import *
 def button_press(number):
     pass
 
+def clear():
+    pass
+
+def equals():
+    pass
+
 window = Tk()
 window.title("Calculator")
 window.geometry("500x500")
@@ -56,5 +62,32 @@ button9.grid(row=2,column=2)
 button0 = Button(frame, text=0,height=3,width=3,
                  font=35,command=lambda: button_press(0))
 button0.grid(row=3,column=1)
+
+# Symbols
+
+plus = Button(frame, text="+",height=3,width=3,
+                 font=35,command=lambda: button_press("+"))
+plus.grid(row=0,column=3)
+minus = Button(frame, text="-",height=3,width=3,
+                 font=35,command=lambda: button_press("-"))
+minus.grid(row=1,column=3)
+multiply = Button(frame, text="*",height=3,width=3,
+                 font=35,command=lambda: button_press("*"))
+multiply.grid(row=2,column=3)
+divide = Button(frame, text="/",height=3,width=3,
+                 font=35,command=lambda: button_press("/"))
+divide.grid(row=3,column=3)
+equal = Button(frame, text="=",height=3,width=3,
+                 font=35,command=lambda: button_press("="))
+equal.grid(row=3,column=2)
+decimal = Button(frame, text=".",height=3,width=3,
+                 font=35,command=lambda: button_press("."))
+decimal.grid(row=3,column=0)
+
+# Clear button
+
+Clear = Button(window, text="clear",height=3,width=3,
+                 font=35,command=clear)
+Clear.pack()
 
 window.mainloop()
