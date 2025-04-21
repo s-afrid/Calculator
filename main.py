@@ -6,7 +6,9 @@ def button_press(number):
     equation_label.set(equation_text)
 
 def clear():
-    pass
+    global equation_text
+    equation_label.set("")
+    equation_text = ""
 
 def equals():
     global equation_text
