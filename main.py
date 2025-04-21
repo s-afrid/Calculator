@@ -9,7 +9,17 @@ def clear():
     pass
 
 def equals():
-    pass
+    global equation_text
+    try:
+        total = str(eval(equation_text))
+        equation_label.set(total)
+        equation_text = total
+    except ZeroDivisionError:
+        equation_label.set("Arithmetic Error")
+        equation_text = "" 
+    except SyntaxError:
+        equation_label.set("Syntax Error")
+        equation_text = ""
 
 window = Tk()
 window.title("Calculator")
@@ -80,7 +90,7 @@ divide = Button(frame, text="/",height=4,width=12,
                  font=35,command=lambda: button_press("/"))
 divide.grid(row=3,column=3)
 equal = Button(frame, text="=",height=4,width=12,
-                 font=35,command=lambda: button_press("="))
+                 font=35,command=equals)
 equal.grid(row=3,column=2)
 decimal = Button(frame, text=".",height=4,width=12,
                  font=35,command=lambda: button_press("."))
